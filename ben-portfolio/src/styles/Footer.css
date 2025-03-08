@@ -1,0 +1,76 @@
+/* Footer.css - Dark Themed Footer - Fully Responsive */
+
+.footer-container {
+    background: #1a1a1a;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    margin-top: 50px;
+  }
+  
+  .footer-text {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 10px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .icon-btn {
+    color: #fff !important;
+    transition: all 0.3s ease;
+  }
+  
+  .icon-btn:hover {
+    color: #ff6ec7 !important;
+    transform: scale(1.2);
+  }
+  
+  /* Responsive Adjustments */
+  
+  /* For phones */
+  @media (max-width: 600px) {
+    .footer-container {
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+    .footer-text {
+      font-size: 0.9rem;
+    }
+    .social-icons {
+      gap: 10px;
+    }
+  }
+  
+  /* For tablets */
+  @media (min-width: 601px) and (max-width: 900px) {
+    .footer-container {
+      padding: 18px 0;
+      margin-top: 40px;
+    }
+    .footer-text {
+      font-size: 1rem;
+    }
+    .social-icons {
+      gap: 12px;
+    }
+  }
+  
+  /* For desktops and larger devices */
+  @media (min-width: 901px) {
+    .footer-container {
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+    .footer-text {
+      font-size: 1rem;
+    }
+    .social-icons {
+      gap: 15px;
+    }
+  }
+  

@@ -1,0 +1,163 @@
+/* main.css */
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light gray text */
+  scroll-behavior: smooth;
+}
+
+/* Global container for consistent layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff; /* White headings */
+}
+
+p {
+  margin-bottom: 1.2rem;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff6ec7; /* Neon pink on hover */
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Animations */
+
+/* Fade in animation for elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply fade in animation with a reusable class */
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Section base style for animated transitions */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Transition classes for more control (for React Transition Group, if needed) */
+.transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.transition-exit-active {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Utility Classes */
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+
+/* Responsive Adjustments */
+
+/* For phones */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.6rem; }
+  p  { font-size: 0.9rem; }
+}
+
+/* For tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2.2rem; }
+  h3 { font-size: 2rem; }
+  p  { font-size: 1rem; }
+}
+
+/* For desktops and larger devices */
+@media (min-width: 901px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.5rem; }
+  h3 { font-size: 2rem; }
+  p  { font-size: 1.1rem; }
+}

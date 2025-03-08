@@ -1,54 +1,43 @@
 import React from 'react';
 import { Box, Typography, IconButton, Link } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import EmailIcon from '@mui/icons-material/Email';
+import { LinkedIn, GitHub, Email } from '@mui/icons-material';
+import { motion } from 'framer-motion';
+import '../styles/Footer.css';
 
-const FooterContainer = styled(Box)(({ theme }) => ({
-  background: 'linear-gradient(90deg, #764ba2, #667eea)',
-  padding: theme.spacing(4, 2),
-  marginTop: theme.spacing(8),
-  textAlign: 'center',
-  color: '#fff',
-}));
-
-const SocialIconButton = styled(IconButton)(({ theme }) => ({
-  color: '#fff',
-  margin: theme.spacing(0, 1),
-  transition: 'transform 0.3s ease, color 0.3s ease',
-  '&:hover': {
-    transform: 'scale(1.1)',
-    color: theme.palette.secondary.light,
-  },
-}));
+const socialLinks = [
+  { icon: <LinkedIn />, url: 'https://www.linkedin.com/in/yourprofile' },
+  { icon: <GitHub />, url: 'https://github.com/yourprofile' },
+  { icon: <Email />, url: 'mailto:youremail@example.com' },
+];
 
 const Footer = () => {
   return (
-    <FooterContainer>
-      <Box sx={{ mb: 2 }}>
-        <SocialIconButton
-          component={Link}
-          href="https://www.linkedin.com/in/yourprofile"
-          target="_blank"
-        >
-          <LinkedInIcon />
-        </SocialIconButton>
-        <SocialIconButton
-          component={Link}
-          href="https://github.com/yourprofile"
-          target="_blank"
-        >
-          <GitHubIcon />
-        </SocialIconButton>
-        <SocialIconButton component={Link} href="mailto:youremail@example.com">
-          <EmailIcon />
-        </SocialIconButton>
+    <motion.div
+      className="footer-container"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <Box className="footer-content">
+        <Typography variant="body1" className="footer-text">
+          &copy; {new Date().getFullYear()} MyPortfolio. All rights reserved.
+        </Typography>
+
+        <Box className="social-icons">
+          {socialLinks.map((item, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <IconButton component={Link} href={item.url} target="_blank" className="icon-btn">
+                {item.icon}
+              </IconButton>
+            </motion.div>
+          ))}
+        </Box>
       </Box>
-      <Typography variant="body2">
-        &copy; {new Date().getFullYear()} A Portfoilio by Benoush Valentine F. All rights reserved.
-      </Typography>
-    </FooterContainer>
+    </motion.div>
   );
 };
 

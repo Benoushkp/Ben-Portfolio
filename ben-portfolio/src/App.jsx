@@ -1,39 +1,52 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Box } from '@mui/material';
+
+// Import core layout components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Education from './pages/Education';
-import Academics from './pages/Academics';
-import InternshipExperience from './pages/InternshipExperience';
-import TechnicalSkills from './pages/TechnicalSkills';
-import NonTechnicalSkills from './pages/NonTechnicalSkills';
-import SoftSkills from './pages/SoftSkills';
-import Projects from './pages/Projects';
-import Interests from './pages/Interests';
-import Hobby from './pages/Hobby';
+
+// Import the necessary sections for the Home page
+import Hero from './components/Hero';
+import Skills from './pages/Skills';
+import ProfileSummary from './components/ProfileSummary';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
-import './App.css';
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/education" element={<Education />} />
-        <Route path="/academics" element={<Academics />} />
-        <Route path="/internship" element={<InternshipExperience />} />
-        <Route path="/technical-skills" element={<TechnicalSkills />} />
-        <Route path="/non-technical-skills" element={<NonTechnicalSkills />} />
-        <Route path="/soft-skills" element={<SoftSkills />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/interests" element={<Interests />} />
-        <Route path="/hobby" element={<Hobby />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <Box 
+        className="main-content" 
+        sx={{
+          padding: { xs: '1rem', sm: '2rem', md: '3rem' },
+          width: '100%',
+          overflowX: 'hidden'
+        }}
+      >
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: { xs: '1rem', md: '2rem' },
+                  width: '100%'
+                }}
+              >
+                <Hero />
+                <ProfileSummary />
+                <Resume />
+                <Contact />
+              </Box>
+            }
+          />
+          <Route path="/skills" element={<Skills />} />
+        </Routes>
+      </Box>
       <Footer />
     </Router>
   );

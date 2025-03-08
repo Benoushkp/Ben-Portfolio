@@ -1,0 +1,99 @@
+/* Hero.css - Dark Themed Hero Section */
+
+.hero-container {
+    background: url('/assets/hero-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    animation: parallax 8s infinite alternate linear;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .highlight {
+    color: #ff6ec7;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    opacity: 0.8;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+  }
+  
+  .hero-button {
+    background: linear-gradient(45deg, #ff6ec7, #667eea);
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 15px rgba(255, 110, 199, 0.8);
+  }
+  
+  .hero-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 25px rgba(255, 110, 199, 1);
+  }
+  
+  /* Responsive Adjustments */
+  
+  /* For tablets */
+  @media (max-width: 900px) {
+    .hero-content {
+      padding: 15px;
+    }
+    .hero-title {
+      font-size: 2.8rem;
+    }
+    .hero-subtitle {
+      font-size: 1.4rem;
+    }
+    .hero-description {
+      font-size: 0.95rem;
+    }
+    .hero-button {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  }
+  
+  /* For phones */
+  @media (max-width: 600px) {
+    .hero-content {
+      padding: 10px;
+    }
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+    .hero-description {
+      font-size: 0.9rem;
+    }
+    .hero-button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  

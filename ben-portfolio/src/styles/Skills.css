@@ -1,0 +1,72 @@
+/* Skills page specific styles */
+
+/* Container for the Skills page */
+.skills-container {
+  padding: 2rem 0;
+}
+
+/* Section styling for each skill category */
+.skills-section {
+  margin-bottom: 2rem;
+}
+
+/* Section header styling */
+.skills-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ff6ec7;
+  padding-bottom: 0.5rem;
+}
+
+/* ---------- Carousel Container Styles ---------- */
+
+/* Inner carousel container */
+.skills-carousel {
+  display: flex;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  width: 100%;
+}
+
+/* Hide scrollbar for Webkit browsers */
+.skills-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each individual skill item */
+.skill-item {
+  flex: 0 0 auto;
+  margin-right: 2rem;
+}
+
+/* ---------- Carousel Controls Styles ---------- */
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* ---------- Arrow Button Styles ---------- */
+.skills-arrow {
+  background-color: rgba(255, 110, 199, 0.8);
+  border: none;
+  color: #fff;
+  padding: 0.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skills-arrow:hover {
+  transform: scale(1.2);
+  background-color: rgba(255, 110, 199, 1);
+}
+
+.skills-arrow:active {
+  transform: scale(0.9);
+}

@@ -1,42 +1,134 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+/* app.css */
+
+/* App Component Container */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #121212; /* Dark background */
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
   padding: 2rem;
+}
+
+/* Header and Footer (if used separately) */
+header, footer {
+  background-color: #1a1a1a; /* Darker background for header/footer */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Section Styling */
+.section {
+  position: relative;
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+/* Section Reveal Animation */
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05); /* Subtle overlay for dark theme */
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: reveal 0.8s forwards;
+}
+
+@keyframes reveal {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* Fade-in Effect for Component Mounting */
+.fade {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Transition Classes for React Transition Group (if applicable) */
+.transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+
+.transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.transition-exit-active {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+
+/* Utility Classes */
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.text-center {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+/* Responsive Adjustments */
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* For Phones */
+@media (max-width: 600px) {
+  .main-content {
+    padding: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+  .section {
+    padding: 2rem 0;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* For Tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+  .main-content {
+    padding: 1.5rem;
+  }
+  .section {
+    padding: 3rem 0;
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* For Desktops and Larger Devices */
+@media (min-width: 901px) {
+  .main-content {
+    padding: 2rem;
+  }
+  .section {
+    padding: 4rem 0;
+  }
 }

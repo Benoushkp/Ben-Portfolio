@@ -1,43 +1,42 @@
 import React from 'react';
 import { Box, Typography, IconButton, Link } from '@mui/material';
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
-import { motion } from 'framer-motion';
+import { Link as RouterLink } from 'react-router-dom';
 import '../styles/Footer.css';
-
-const socialLinks = [
-  { icon: <LinkedIn />, url: 'https://www.linkedin.com/in/yourprofile' },
-  { icon: <GitHub />, url: 'https://github.com/yourprofile' },
-  { icon: <Email />, url: 'mailto:youremail@example.com' },
-];
 
 const Footer = () => {
   return (
-    <motion.div
-      className="footer-container"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <Box className="footer-content">
-        <Typography variant="body1" className="footer-text">
-          &copy; {new Date().getFullYear()} MyPortfolio. All rights reserved.
-        </Typography>
+    <Box className="footer-container">
+      <Box className="footer-inner">
+        {/* Navigation Links */}
+        <Box className="footer-links">
+          <Link component={RouterLink} to="/services" className="footer-link">
+            Services
+          </Link>
+          <Link component={RouterLink} to="/blog" className="footer-link">
+            My Blog
+          </Link>
+        </Box>
 
-        <Box className="social-icons">
-          {socialLinks.map((item, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <IconButton component={Link} href={item.url} target="_blank" className="icon-btn">
-                {item.icon}
-              </IconButton>
-            </motion.div>
-          ))}
+        {/* Social Media Icons */}
+        <Box className="footer-social">
+          <IconButton component={Link} href="https://www.linkedin.com/in/benoush-valentine-f-965a27252" target="_blank" className="icon-btn">
+            <LinkedIn fontSize="medium" />
+          </IconButton>
+          <IconButton component={Link} href="https://github.com/Benoushkp" target="_blank" className="icon-btn">
+            <GitHub fontSize="medium" />
+          </IconButton>
+          <IconButton component={Link} href="mailto:benoushvalentine@gmail.com" className="icon-btn">
+            <Email fontSize="medium" />
+          </IconButton>
         </Box>
       </Box>
-    </motion.div>
+
+      {/* Copyright */}
+      <Typography className="footer-bottom">
+        &copy; {new Date().getFullYear()} Benoush's Portfolio. All rights reserved.
+      </Typography>
+    </Box>
   );
 };
 

@@ -1,145 +1,127 @@
 /* Navbar.css - Dark Themed Navbar - Fully Responsive */
 
 .navbar {
-    background: #1a1a1a;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-    position: relative;
-    z-index: 200;
-  }
-  
+  background: #1a1a1a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 200;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Logo styling */
+.logo {
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* Desktop navigation links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* Default nav-item styling */
+.nav-item {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Highlight on hover */
+.nav-item:hover {
+  color: #ff6ec7;
+  transform: scale(1.1);
+}
+
+/* Stay Pink When Active */
+.nav-item.active {
+  color: #ff6ec7 !important;
+  font-weight: bold;
+}
+
+/* Mobile menu button */
+.menu-btn {
+  display: none;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+/* Mobile navigation menu */
+.mobile-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  z-index: 100;
+}
+
+.mobile-nav-item {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.mobile-nav-item:hover {
+  color: #ff6ec7;
+  transform: scale(1.1);
+}
+
+/* Active class for mobile */
+.mobile-nav-item.active {
+  color: #ff6ec7 !important;
+  font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
   .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
-  
-  /* Logo styling */
-  .logo {
-    font-weight: bold;
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.5rem;
-  }
-  
-  /* Desktop navigation links */
-  .nav-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-item {
-    color: #fff;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-item:hover {
-    color: #ff6ec7;
-    transform: scale(1.1);
-  }
-  
-  /* Mobile menu button */
-  .menu-btn {
-    display: none;
-    color: #fff;
-    font-size: 1.8rem;
-  }
-  
-  /* Mobile navigation menu */
-  .mobile-menu {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    background: #1a1a1a;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    z-index: 100;
-  }
-  
-  .mobile-nav-item {
-    color: #fff;
-    font-size: 1.2rem;
-    text-decoration: none;
-    margin: 10px 0;
-    transition: all 0.3s ease;
-  }
-  
-  .mobile-nav-item:hover {
-    color: #ff6ec7;
-    transform: scale(1.1);
-  }
-  
-  /* Responsive adjustments */
-  
-  /* Phones (max-width: 600px) */
-  @media (max-width: 600px) {
-    .navbar-container {
       padding: 10px 15px;
-    }
-    
-    .logo {
+  }
+  .logo {
       font-size: 1.2rem;
-    }
-    
-    .nav-links {
+  }
+  .nav-links {
       display: none;
-    }
-    
-    .menu-btn {
+  }
+  .menu-btn {
       display: block;
-    }
-    
-    .mobile-nav-item {
-      font-size: 1rem;
-      margin: 8px 0;
-    }
   }
-  
-  /* Tablets (min-width: 601px and max-width: 1024px) */
-  @media (min-width: 601px) and (max-width: 1024px) {
-    .navbar-container {
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .navbar-container {
       padding: 10px 20px;
-    }
-    
-    .logo {
-      font-size: 1.4rem;
-    }
-    
-    .nav-links {
+  }
+  .nav-links {
       gap: 15px;
-    }
-    
-    .nav-item {
-      font-size: 1rem;
-    }
-    
-    /* Optionally, show mobile menu button if needed */
-    .menu-btn {
-      display: none;
-    }
   }
-  
-  /* Desktops (min-width: 1025px) */
-  @media (min-width: 1025px) {
-    .navbar-container {
+  .nav-item {
+      font-size: 1rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .navbar-container {
       padding: 10px 30px;
-    }
-    
-    .logo {
-      font-size: 1.6rem;
-    }
-    
-    .nav-links {
-      gap: 25px;
-    }
-    
-    .nav-item {
-      font-size: 1rem;
-    }
   }
-  
+  .nav-links {
+      gap: 25px;
+  }
+}

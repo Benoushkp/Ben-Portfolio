@@ -13,6 +13,9 @@ import Contact from './pages/Contact';
 import Higher from './pages/Higher';
 import InternshipExperience from './pages/InternshipExperience';
 import ProjectsPage from './pages/Projects';
+import Interests from './pages/Interests';
+import Hobby from './pages/Hobby';
+import ServicesPage from './pages/ServicesPage';
 
 function App() {
   return (
@@ -49,6 +52,10 @@ function App() {
           <Route path="/higher" element={<Higher />} />
           <Route path="/internship" element={<InternshipExperience />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/interests" element={<Interests />} />
+          <Route path="/hobbies" element={<Hobby />}/>
+          <Route path="/contact" element={<Contact />}/>
+          <Route path="/services" element={<ServicesPage />} />
         </Routes>
       </Box>
       <Footer />

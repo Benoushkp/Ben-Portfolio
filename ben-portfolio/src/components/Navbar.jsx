@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, IconButton, Box, Avatar } from '@mui/material';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -11,7 +11,7 @@ const MotionBox = motion(Box);
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Skills', path: '/skills' },
-  { name: 'Education', path: '/higher' },
+  { name: 'Education', path: '/higher' }, // Updated to point to Higher.jsx
   { name: 'Internship Experience', path: '/internship' },
   { name: 'Projects', path: '/projects' },
   { name: 'Interests', path: '/interests' },
@@ -21,7 +21,6 @@ const navLinks = [
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation(); // Get current page path
 
   return (
     <AppBar
@@ -85,11 +84,13 @@ const Navbar = () => {
               <RouterLink
                 to={link.path}
                 style={{
-                  color: location.pathname === link.path ? '#ff6ec7' : '#fff',
+                  color: '#fff',
                   textDecoration: 'none',
-                  fontWeight: location.pathname === link.path ? 'bold' : 500,
+                  fontWeight: 500,
                   transition: 'color 0.3s ease, transform 0.3s ease',
                 }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#ff6ec7')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#fff')}
               >
                 {link.name}
               </RouterLink>
@@ -140,13 +141,14 @@ const Navbar = () => {
                 <RouterLink
                   to={link.path}
                   style={{
-                    color: location.pathname === link.path ? '#ff6ec7' : '#fff',
+                    color: '#fff',
                     textDecoration: 'none',
                     fontSize: '1.2rem',
                     margin: '10px 0',
-                    fontWeight: location.pathname === link.path ? 'bold' : 500,
                     transition: 'color 0.3s ease, transform 0.3s ease',
                   }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#ff6ec7')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#fff')}
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.name}

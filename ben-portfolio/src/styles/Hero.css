@@ -2,11 +2,11 @@
 
 .hero-container {
   background: url('/assets/hero-bg.jpg') no-repeat center center/cover;
-  height: 80vh; /* Reduced from 100vh to 90vh to remove extra space */
+  height: 80vh; /* Using 80vh for desktop */
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 40px;  /* Adjust this for top spacing */
+  padding-top: 40px; /* Adjust this for top spacing */
   padding-bottom: 0px; /* Eliminates unnecessary bottom space */
   text-align: center;
   position: relative;
@@ -15,6 +15,7 @@
 
 .hero-content {
   max-width: 800px;
+  width: 100%;
   color: #fff;
   padding: 15px; /* Reduced padding */
 }
@@ -62,11 +63,12 @@
 /* For tablets */
 @media (max-width: 900px) {
   .hero-container {
-    height: 85vh; /* Further reduced for tablets */
+    height: 75vh; /* Reduced height for tablets */
     padding-top: 30px;
   }
   .hero-content {
     padding: 10px;
+    max-width: 90%;
   }
   .hero-title {
     font-size: 2.8rem;
@@ -87,11 +89,13 @@
 /* For phones */
 @media (max-width: 600px) {
   .hero-container {
-    height: 80vh; /* Further reduced for mobile */
+    height: 70vh; /* Reduced height for mobile */
     padding-top: 20px;
   }
   .hero-content {
     padding: 5px;
+    max-width: 90%;
+    margin: 0 auto;
   }
   .hero-title {
     font-size: 2.5rem;

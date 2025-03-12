@@ -126,8 +126,20 @@ img:hover {
 
 /* Responsive Adjustments */
 
+/* For very small phones */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.3rem;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.4rem; }
+  p  { font-size: 0.85rem; }
+}
+
 /* For phones */
-@media (max-width: 600px) {
+@media (min-width: 481px) and (max-width: 600px) {
   .container {
     padding: 0 0.5rem;
   }

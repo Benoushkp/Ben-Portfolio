@@ -70,3 +70,68 @@
 .skills-arrow:active {
   transform: scale(0.9);
 }
+
+/* Responsive Adjustments */
+
+/* For phones */
+@media (max-width: 600px) {
+  .skills-container {
+    padding: 1rem 0;
+  }
+  
+  .skills-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom-width: 1.5px;
+  }
+  
+  .skills-carousel {
+    gap: 0.5rem;
+  }
+  
+  .skill-item {
+    margin-right: 1rem;
+  }
+  
+  .carousel-controls {
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+  }
+  
+  .skills-arrow {
+    padding: 0.6rem;
+  }
+}
+
+/* For tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+  .skills-container {
+    padding: 1.5rem 0;
+  }
+  
+  .skills-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.45rem;
+  }
+  
+  .skills-carousel {
+    gap: 0.8rem;
+  }
+  
+  .skill-item {
+    margin-right: 1.5rem;
+  }
+  
+  .carousel-controls {
+    gap: 0.8rem;
+    margin-top: 0.9rem;
+  }
+  
+  .skills-arrow {
+    padding: 0.7rem;
+  }
+}
+
+/* Desktop (min-width: 901px) - Remains unchanged */

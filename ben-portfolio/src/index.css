@@ -63,7 +63,6 @@ button {
 .container {
   max-width: 1200px;
   margin: 0 auto;
- 
 }
 
 /* Utility Classes */
@@ -115,29 +114,38 @@ img:hover {
 
 /* Responsive Adjustments */
 
-/* Phones (max-width: 768px) */
-@media (max-width: 768px) {
+/* For very small phones (max-width: 480px) */
+@media (max-width: 480px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+  h3, h4, h5, h6 { font-size: 1.6rem; }
+  p  { font-size: 0.85rem; }
+  .container { padding: 0 0.3rem; }
+}
+
+/* For phones (min-width: 481px) and (max-width: 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
   h1 { font-size: 2.5rem; }
   h2 { font-size: 2rem; }
   h3, h4, h5, h6 { font-size: 1.8rem; }
-  p { font-size: 0.9rem; }
+  p  { font-size: 0.9rem; }
   .container { padding: 0 0.5rem; }
 }
 
-/* Tablets (min-width: 769px) and (max-width: 1024px) */
+/* For tablets (min-width: 769px) and (max-width: 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   h1 { font-size: 2.8rem; }
   h2 { font-size: 2.4rem; }
   h3, h4, h5, h6 { font-size: 2rem; }
-  p { font-size: 1rem; }
+  p  { font-size: 1rem; }
   .container { padding: 0 0.75rem; }
 }
 
-/* Desktops (min-width: 1025px) */
+/* For desktops (min-width: 1025px) */
 @media (min-width: 1025px) {
   h1 { font-size: 3.5rem; }
   h2 { font-size: 3rem; }
   h3, h4, h5, h6 { font-size: 2.5rem; }
-  p { font-size: 1.1rem; }
+  p  { font-size: 1.1rem; }
   .container { padding: 0 1rem; }
 }

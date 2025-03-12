@@ -16,6 +16,11 @@ import ProjectsPage from './pages/Projects';
 import Interests from './pages/Interests';
 import Hobby from './pages/Hobby';
 import ServicesPage from './pages/ServicesPage';
+import BlogPage from './pages/Blog';
+import ShortFilms from './pages/ShortFilms';
+import Books from './pages/Books';
+import Music from './pages/Music';
+import Websites from './pages/Websites';
 
 function App() {
   return (
@@ -56,6 +61,11 @@ function App() {
           <Route path="/hobbies" element={<Hobby />}/>
           <Route path="/contact" element={<Contact />}/>
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/shortfilms" element={<ShortFilms />} />
+          <Route path="/books" element={<Books />} />
+          <Route path="/songs" element={<Music />} />
+          <Route path="/websites" element={<Websites />} />
         </Routes>
       </Box>
       <Footer />

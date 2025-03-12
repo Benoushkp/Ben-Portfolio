@@ -34,6 +34,7 @@
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
+  font-size: 1rem;
 }
 
 /* Highlight on hover */
@@ -77,7 +78,7 @@
   transition: all 0.3s ease;
 }
 
-/* Hover effect */
+/* Hover effect for mobile items */
 .mobile-nav-item:hover {
   color: #ff6ec7;
   transform: scale(1.1);
@@ -90,38 +91,54 @@
 }
 
 /* Responsive Adjustments */
+
+/* Mobile (max-width: 600px) */
 @media (max-width: 600px) {
   .navbar-container {
-      padding: 10px 15px;
+    padding: 10px 15px;
   }
   .logo {
-      font-size: 1.2rem;
+    font-size: 1.2rem;
   }
   .nav-links {
-      display: none;
+    display: none;
   }
   .menu-btn {
-      display: block;
+    display: block;
+  }
+  /* Override hover transform on mobile for a subtler effect */
+  .nav-item:hover,
+  .mobile-nav-item:hover {
+    transform: scale(1.05);
   }
 }
 
+/* Tablets (min-width: 601px) and (max-width: 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
   .navbar-container {
-      padding: 10px 20px;
+    padding: 10px 20px;
+  }
+  .logo {
+    font-size: 1.4rem; /* Slightly smaller than desktop */
   }
   .nav-links {
-      gap: 15px;
+    gap: 15px;
   }
   .nav-item {
-      font-size: 1rem;
+    font-size: 0.95rem;
+  }
+  /* Ensure the mobile menu button stays hidden on tablets */
+  .menu-btn {
+    display: none;
   }
 }
 
+/* Desktop (min-width: 1025px) - Desktop is correct exactly */
 @media (min-width: 1025px) {
   .navbar-container {
-      padding: 10px 30px;
+    padding: 10px 30px;
   }
   .nav-links {
-      gap: 25px;
+    gap: 25px;
   }
 }

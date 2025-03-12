@@ -1,53 +1,41 @@
 import React from 'react';
-import { Box, Typography, List, ListItem, ListItemText, Divider } from '@mui/material';
+import { Box, Typography, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import '../styles/main.css'; // Global styles
 
 const Academics = () => {
-  const courses = [
-    "Advanced Algorithms & Data Structures",
-    "Modern Web Development & UI/UX",
-    "Artificial Intelligence & Machine Learning",
-    "Data Science & Big Data Analytics",
-    "Cloud Computing & Distributed Systems",
-  ];
-
   const achievements = [
-    "Dean's List for 3 consecutive years",
-    "Winner of the XYZ Hackathon",
-    "Published research in ABC Journal",
-    "Top 5% in National Coding Competition",
+    "1. Scored Centum in Social Science (SSLC)",
+    "2. Scored 97 in Computer Science (Higher Secondary)",
+    "3. Scored Centum in Several Subjects during College in all 8 Semesters",
+    "4. President of the IT Department - (2024 - 2025)",
+    "5. Organized Technical Symposiums and Conference",
+    "6. Participated and won in several seminars in inter-college and other colleges as well",
+    "7. Served as Student Placement Co-ordinator"
   ];
 
   return (
-    <Box sx={{ py: 8, px: { xs: 2, md: 4 }, maxWidth: 800, mx: 'auto' }}>
+    <Box
+      className="container academics-container"
+      sx={{ py: 8, px: { xs: 2, md: 4 }, maxWidth: 800, mx: 'auto' }}
+    >
       <Typography variant="h4" align="center" gutterBottom>
         Academics
       </Typography>
 
-      {/* Courses Section */}
-      <Typography variant="h6" gutterBottom>
-        Courses
-      </Typography>
-      <List>
-        {courses.map((course, index) => (
-          <ListItem key={index} sx={{ py: 0.5 }}>
-            <ListItemText primary={course} />
-          </ListItem>
-        ))}
-      </List>
-
-      <Divider sx={{ my: 4 }} />
-
       {/* Achievements Section */}
-      <Typography variant="h6" gutterBottom>
-        Achievements
-      </Typography>
-      <List>
-        {achievements.map((achievement, index) => (
-          <ListItem key={index} sx={{ py: 0.5 }}>
-            <ListItemText primary={achievement} />
-          </ListItem>
-        ))}
-      </List>
+      <Accordion sx={{ mb: 2 }}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography variant="h6">Achievements</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          {achievements.map((achievement, index) => (
+            <Box key={index} sx={{ mb: 1 }}>
+              <Typography variant="body1">{achievement}</Typography>
+            </Box>
+          ))}
+        </AccordionDetails>
+      </Accordion>
     </Box>
   );
 };

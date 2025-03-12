@@ -93,7 +93,7 @@ const NonTechnicalSkills = () => {
     {
       name: 'Short Film Director',
       description:
-        'Directed short films showcasing storytelling and cinematic vision. Brings creativity and compelling narratives to life on screen.',
+        'Directed short films showcasing storytelling and cinematic vision. Bringing creativity and compelling narrative to life on screen.',
       images: [
         '/assets/short1.jpg',
         '/assets/short2.jpg',

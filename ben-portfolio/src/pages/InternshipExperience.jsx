@@ -11,20 +11,38 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 const InternshipExperience = () => {
   const internships = [
     {
-      company: 'Tech Solutions Inc.',
-      role: 'Front-end Developer Intern',
-      duration: 'June 2023 - August 2023',
+      company: 'Imarticus Corporate Solutions',
+      role: 'Learning and Training Governance Intern',
+      duration: 'April 2024 - June 2024',
       description:
-        'Developed responsive web applications using React and Material‑UI, collaborated with designers, and optimized website performance.',
+        'Experienced in Learning and Training Governance with the help of my team, handling operations and administration for corporate training programs. Skilled in Excel Automation to streamline reporting and optimize workflows. Hands-on expertise in Generative AI, leveraging AI-driven solutions to enhance training methodologies. Proficient in process optimization and strategic execution to improve learning outcomes.',
+      image: '/assets/Imarticus.jpeg', // Replace with your actual image path
     },
     {
-      company: 'Innovatech Labs',
-      role: 'Software Engineering Intern',
-      duration: 'January 2023 - May 2023',
+      company: 'SDA Group of Schools',
+      role: 'French Guest Teacher',
+      duration: 'October 2023 - March 2024',
       description:
-        'Assisted in developing new features, engaged in code reviews, and participated in agile sprint meetings to enhance the company’s main product.',
+        'Taught French to Higher Secondary students, focusing on language proficiency and cultural understanding. Conducted career guidance sessions to help students navigate their academic and professional paths. Delivered personality development training, enhancing students confidence, communication, and leadership skills. Passionate about mentorship and holistic education, ensuring student growth beyond academics.',
+      image: '/assets/SDA.jpeg', // Replace with your actual image path
     },
-    // Add more internship details as needed
+    {
+      company: 'SkillForge E-Learning Pvt Ltd',
+      role: 'Business Development Associate Intern',
+      duration: 'July 2023 - October 2023',
+      description:
+        'Experienced in Lead Generation, Digital Marketing, and Customer Engagement, driving brand visibility and business growth. Skilled in targeted marketing strategies, leveraging digital platforms to attract and convert leads. Proficient in customer relationship management, ensuring high engagement and retention. Passionate about data-driven marketing and optimizing campaigns for maximum impact.',
+      image: '/assets/SkillForge.jpeg', // Replace with your actual image path
+    },
+    {
+      company: 'National Smallscale Industries Corporation',
+      role: 'Android App Development and IoT',
+      duration: 'August 2022 - August 2022',
+      description:
+        'Experienced in Lead Generation, Digital Marketing, and Customer Engagement, driving brand visibility and business growth. Skilled in targeted marketing strategies, leveraging digital platforms to attract and convert leads. Proficient in customer relationship management, ensuring high engagement and retention. Passionate about data-driven marketing and optimizing campaigns for maximum impact.',
+      image: '/assets/NSIC.jpg', // Replace with your actual image path
+    },
+    // Add more internship objects as needed
   ];
 
   return (
@@ -40,6 +58,18 @@ const InternshipExperience = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
+            {/* Image for the internship */}
+            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+              <img
+                src={internship.image}
+                alt={`${internship.company} internship`}
+                style={{
+                  width: '100%',
+                  maxWidth: '300px',
+                  borderRadius: '8px',
+                }}
+              />
+            </Box>
             <Typography variant="body1">
               {internship.description}
             </Typography>

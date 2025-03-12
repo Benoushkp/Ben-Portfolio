@@ -11,7 +11,7 @@ const MotionBox = motion(Box);
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Skills', path: '/skills' },
-  { name: 'Education', path: '/education' },
+  { name: 'Education', path: '/higher' }, // Updated to point to Higher.jsx
   { name: 'Internship Experience', path: '/internship' },
   { name: 'Projects', path: '/projects' },
   { name: 'Interests', path: '/interests' },
@@ -33,7 +33,7 @@ const Navbar = () => {
     >
       <Toolbar
         sx={{
-          minHeight: { xs: '100px', md: '120px' }, // Increased Navbar height
+          minHeight: { xs: '100px', md: '120px' },
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
@@ -65,7 +65,10 @@ const Navbar = () => {
               }}
             />
           </motion.div>
-          <Typography variant="h6" sx={{ fontWeight: 'bold', fontSize: { xs: '1.2rem', md: '1.5rem' } }}>
+          <Typography
+            variant="h6"
+            sx={{ fontWeight: 'bold', fontSize: { xs: '1.2rem', md: '1.5rem' } }}
+          >
             BENOUSH'S PORTFOLIO
           </Typography>
         </RouterLink>

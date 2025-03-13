@@ -1,20 +1,24 @@
+// src/pages/Home.jsx
 import React from 'react';
 import { Box } from '@mui/material';
 import { motion } from 'framer-motion';
 
-// Importing components from src/components
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import ProfileSummary from '../components/ProfileSummary';
 import Footer from '../components/Footer';
-
-// Importing sections from src/pages
 import Resume from '../pages/Resume';
 import Contact from '../pages/Contact';
 
 const Home = () => {
   return (
-    <Box sx={{ background: '#121212', minHeight: '100vh' }}>
+    <Box
+      sx={{
+        background: '#121212',
+        minHeight: '100vh',
+        padding: { xs: '1rem', sm: '2rem', md: '3rem' },
+      }}
+    >
       <Navbar />
 
       {/* Hero Section */}

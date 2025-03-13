@@ -15,13 +15,16 @@ const Home = () => {
       <Navbar />
       {/* Use Container to center and control the width of the main content */}
       <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 } }}>
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <Hero />
-        </motion.div>
+        {/* Wrap Hero in a Box with responsive margin-bottom */}
+        <Box sx={{ mb: { xs: 2, md: 1 } }}>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Hero />
+          </motion.div>
+        </Box>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

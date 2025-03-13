@@ -200,6 +200,13 @@ const Music = () => {
       withMusic: '/assets/Music/Thaensudare Benoush.mp3',
     },
     {
+      title: 'Yendi Vittu Pona from Dragon',
+      description: 'A soulful track available only in Music version.',
+      image: 'https://i.ytimg.com/vi/JQ32hkdep3I/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC4e_W7Lr_yKHNo1icuS6vYkl9khw',
+      vocals: '',
+      withMusic: '/assets/Music/Yendi Vittu Pona Benoush.mp3',
+    },
+    {
       title: 'Perfect Ed Sheeran Short',
       description: 'A soulful track available only in Music version.',
       image: 'https://i.ytimg.com/vi/kPhpHvnnn0Q/maxresdefault.jpg',

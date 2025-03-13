@@ -27,7 +27,7 @@ const SkillsCarousel = React.memo(({ children }) => {
         sx={{
           overflowX: 'auto',
           display: 'flex',
-          gap: 3,
+          gap: 4,
           scrollBehavior: 'smooth',
           '&::-webkit-scrollbar': { display: 'none' },
         }}
@@ -41,7 +41,7 @@ const SkillsCarousel = React.memo(({ children }) => {
           justifyContent: 'center',
           alignItems: 'center',
           mt: 2,
-          gap: 3,
+          gap: 4,
         }}
       >
         <IconButton

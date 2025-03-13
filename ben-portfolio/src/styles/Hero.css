@@ -1,7 +1,7 @@
 /* Hero.css - Dark Themed Hero Section */
 
 .hero-container {
-  background: url('/assets/hero-bg.jpg') no-repeat center center/cover;
+  background: #000;
   height: 80vh; /* Using 80vh for desktop */
   display: flex;
   justify-content: center;

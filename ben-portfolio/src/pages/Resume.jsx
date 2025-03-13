@@ -1,9 +1,10 @@
+// src/pages/Resume.jsx
 import React from 'react';
 import { Box, Typography, Button, Card, CardContent } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import DescriptionIcon from '@mui/icons-material/Description';
 
-// Glassmorphic Resume Card
+// Glassmorphic Resume Card with responsive adjustments
 const ResumeCard = styled(Card)(({ theme }) => ({
   background: 'rgba(255, 255, 255, 0.1)',
   backdropFilter: 'blur(12px)',
@@ -15,9 +16,13 @@ const ResumeCard = styled(Card)(({ theme }) => ({
   maxWidth: 800,
   margin: 'auto',
   color: '#fff',
+  [theme.breakpoints.down('sm')]: {
+    maxWidth: '90%',
+    padding: theme.spacing(3),
+  },
 }));
 
-// Styled Buttons with Black Text Hover Effect
+// Styled Button with hover effects
 const CustomButton = styled(Button)(({ theme }) => ({
   fontWeight: 'bold',
   padding: '12px 24px',
@@ -43,8 +48,20 @@ const Resume = () => {
         <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
           View or download my resume using the buttons below.
         </Typography>
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
-          <CustomButton variant="contained" startIcon={<DescriptionIcon />} href="/resume.pdf" target="_blank">
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            justifyContent: 'center',
+            gap: 2,
+          }}
+        >
+          <CustomButton
+            variant="contained"
+            startIcon={<DescriptionIcon />}
+            href="/resume.pdf"
+            target="_blank"
+          >
             View Resume
           </CustomButton>
           <Button
@@ -57,7 +74,7 @@ const Resume = () => {
               color: '#ff6ec7',
               '&:hover': {
                 backgroundColor: '#ff6ec7',
-                color: '#000', // Text turns black on hover
+                color: '#000',
               },
             }}
           >

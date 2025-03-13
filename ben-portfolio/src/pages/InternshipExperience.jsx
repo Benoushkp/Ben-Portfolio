@@ -16,7 +16,7 @@ const InternshipExperience = () => {
       duration: 'April 2024 - June 2024',
       description:
         'Experienced in Learning and Training Governance with the help of my team, handling operations and administration for corporate training programs. Skilled in Excel Automation to streamline reporting and optimize workflows. Hands-on expertise in Generative AI, leveraging AI-driven solutions to enhance training methodologies. Proficient in process optimization and strategic execution to improve learning outcomes.',
-      image: '/assets/Imarticus.jpeg', // Replace with your actual image path
+      image: '/assets/Imarticus.jpeg',
     },
     {
       company: 'SDA Group of Schools',
@@ -24,7 +24,7 @@ const InternshipExperience = () => {
       duration: 'October 2023 - March 2024',
       description:
         'Taught French to Higher Secondary students, focusing on language proficiency and cultural understanding. Conducted career guidance sessions to help students navigate their academic and professional paths. Delivered personality development training, enhancing students confidence, communication, and leadership skills. Passionate about mentorship and holistic education, ensuring student growth beyond academics.',
-      image: '/assets/SDA.jpeg', // Replace with your actual image path
+      image: '/assets/SDA.jpeg',
     },
     {
       company: 'SkillForge E-Learning Pvt Ltd',
@@ -32,7 +32,7 @@ const InternshipExperience = () => {
       duration: 'July 2023 - October 2023',
       description:
         'Experienced in Lead Generation, Digital Marketing, and Customer Engagement, driving brand visibility and business growth. Skilled in targeted marketing strategies, leveraging digital platforms to attract and convert leads. Proficient in customer relationship management, ensuring high engagement and retention. Passionate about data-driven marketing and optimizing campaigns for maximum impact.',
-      image: '/assets/SkillForge.jpeg', // Replace with your actual image path
+      image: '/assets/SkillForge.jpeg',
     },
     {
       company: 'National Smallscale Industries Corporation',
@@ -40,9 +40,8 @@ const InternshipExperience = () => {
       duration: 'August 2022 - August 2022',
       description:
         'Experienced in Lead Generation, Digital Marketing, and Customer Engagement, driving brand visibility and business growth. Skilled in targeted marketing strategies, leveraging digital platforms to attract and convert leads. Proficient in customer relationship management, ensuring high engagement and retention. Passionate about data-driven marketing and optimizing campaigns for maximum impact.',
-      image: '/assets/NSIC.jpg', // Replace with your actual image path
+      image: '/assets/NSIC.jpg',
     },
-    // Add more internship objects as needed
   ];
 
   return (
@@ -51,14 +50,17 @@ const InternshipExperience = () => {
         Internship Experience
       </Typography>
       {internships.map((internship, index) => (
-        <Accordion key={index} sx={{ mb: 2 }}>
+        <Accordion 
+          key={index} 
+          sx={{ mb: 2 }}
+          TransitionProps={{ timeout: 500 }} // Smooth transition
+        >
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography variant="h6">
               {internship.role} at {internship.company} ({internship.duration})
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            {/* Image for the internship */}
             <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
               <img
                 src={internship.image}

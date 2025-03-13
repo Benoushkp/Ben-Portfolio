@@ -49,7 +49,7 @@ const Websites = () => {
       title: 'Multipage Portfolio With Advanced UI Design',
       description: 'This portfolio features a modern, minimalist yet advanced design with a dark-themed, glassmorphic UI for a sleek and futuristic feel.',
       image: '/assets/Portfolio.png',
-      link: 'https://benoush-portfolio.netlify.app/',
+      link: 'https://benoush-portfolio.vercel.app/#/',
     },
     {
       title: 'Advanced To-Do List Web Application',

@@ -8,7 +8,6 @@ import Hero from '../components/Hero';
 import ProfileSummary from '../components/ProfileSummary';
 import Footer from '../components/Footer';
 import Resume from '../pages/Resume';
-// Import the updated Contact component from components (same as your Contact page)
 import Contact from '../components/Contact';
 
 const Home = () => {
@@ -55,7 +54,10 @@ const Home = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.9 }}
       >
-        <Contact />
+        {/* Wrapping Contact in an extra Box to isolate its styling */}
+        <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+          <Contact />
+        </Box>
       </motion.div>
 
       <Footer />

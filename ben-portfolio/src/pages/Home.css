@@ -1,0 +1,21 @@
+.home-container {
+  background: #121212;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main content sections (Hero, Profile, Resume) */
+.home-main-content {
+  padding: 1rem; /* Adjust to your preference */
+}
+
+/* Contact section styling */
+.home-contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Minimal vertical spacing */
+  padding: 1rem 0;
+  background: #121212; /* Matches overall page background */
+}

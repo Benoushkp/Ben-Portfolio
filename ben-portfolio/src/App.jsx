@@ -54,7 +54,7 @@ function App() {
                   <Hero />
                   <ProfileSummary />
                   <Resume />
-                  <Contact />
+                  {/* Contact component removed from the home page */}
                 </Box>
               }
             />

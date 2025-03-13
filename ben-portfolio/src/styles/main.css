@@ -1,4 +1,4 @@
-/* main.css */
+/* main.css - Global Base Styles and Responsive Adjustments */
 
 /* Global Reset */
 * {
@@ -11,8 +11,8 @@
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  background-color: #121212; /* Dark background */
-  color: #e0e0e0; /* Light gray text */
+  background-color: #121212;
+  color: #e0e0e0;
   scroll-behavior: smooth;
 }
 
@@ -27,7 +27,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #ffffff; /* White headings */
+  color: #ffffff;
 }
 
 p {
@@ -42,7 +42,7 @@ a {
 }
 
 a:hover {
-  color: #ff6ec7; /* Neon pink on hover */
+  color: #ff6ec7;
 }
 
 /* Buttons */
@@ -70,8 +70,6 @@ img:hover {
 }
 
 /* Animations */
-
-/* Fade in animation for elements */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -82,8 +80,6 @@ img:hover {
     transform: translateY(0);
   }
 }
-
-/* Apply fade in animation with a reusable class */
 .fade-in {
   animation: fadeIn 0.8s ease-out forwards;
 }
@@ -95,7 +91,7 @@ img:hover {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* Transition classes for more control (for React Transition Group, if needed) */
+/* Transition classes for more control */
 .transition-enter {
   opacity: 0;
   transform: translateY(20px);
@@ -162,7 +158,7 @@ img:hover {
   p  { font-size: 1rem; }
 }
 
-/* For desktops and larger devices */
+/* For desktops */
 @media (min-width: 901px) {
   .container {
     padding: 0 1.5rem;

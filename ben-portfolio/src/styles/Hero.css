@@ -1,13 +1,13 @@
-/* Hero.css - Dark Themed Hero Section */
+/* Hero.css - Updated Hero Section for Responsiveness */
 
 .hero-container {
   background: #000;
-  height: 80vh; /* Using 80vh for desktop */
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 40px; /* Adjust this for top spacing */
-  padding-bottom: 0px; /* Eliminates unnecessary bottom space */
+  padding-top: 40px;
+  padding-bottom: 0;
   text-align: center;
   position: relative;
   animation: parallax 8s infinite alternate linear;
@@ -17,13 +17,13 @@
   max-width: 800px;
   width: 100%;
   color: #fff;
-  padding: 15px; /* Reduced padding */
+  padding: 15px;
 }
 
 .hero-title {
   font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 5px; /* Reduced space below title */
+  margin-bottom: 5px;
 }
 
 .highlight {
@@ -32,21 +32,21 @@
 
 .hero-subtitle {
   font-size: 1.5rem;
-  margin-bottom: 10px; /* Reduced bottom space */
+  margin-bottom: 10px;
   opacity: 0.8;
 }
 
 .hero-description {
   font-size: 1rem;
   opacity: 0.9;
-  margin-bottom: 10px; /* Reduced bottom space */
+  margin-bottom: 10px;
 }
 
 .hero-button {
   background: linear-gradient(45deg, #ff6ec7, #667eea);
   color: white;
   font-size: 1.1rem;
-  padding: 10px 22px; /* Reduced padding */
+  padding: 10px 22px;
   border-radius: 50px;
   font-weight: bold;
   transition: all 0.3s ease;
@@ -58,12 +58,10 @@
   box-shadow: 0px 0px 25px rgba(255, 110, 199, 1);
 }
 
-/* Responsive Adjustments */
-
-/* For tablets */
+/* Tablet adjustments */
 @media (max-width: 900px) {
   .hero-container {
-    height: 75vh; /* Reduced height for tablets */
+    height: 75vh;
     padding-top: 30px;
   }
   .hero-content {
@@ -86,10 +84,10 @@
   }
 }
 
-/* For phones */
+/* Mobile adjustments */
 @media (max-width: 600px) {
   .hero-container {
-    height: 70vh; /* Reduced height for mobile */
+    height: 70vh;
     padding-top: 20px;
   }
   .hero-content {

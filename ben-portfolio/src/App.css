@@ -1,4 +1,4 @@
-/* app.css */
+/* App.css - Updated for Responsive Design */
 
 /* App Component Container */
 .App {
@@ -14,9 +14,9 @@
   padding: 2rem;
 }
 
-/* Header and Footer (if used separately) */
+/* Header and Footer styling */
 header, footer {
-  background-color: #1a1a1a; /* Darker background for header/footer */
+  background-color: #1a1a1a;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -35,7 +35,7 @@ header, footer {
   left: 0;
   right: 0;
   height: 100%;
-  background: rgba(255, 255, 255, 0.05); /* Subtle overlay for dark theme */
+  background: rgba(255, 255, 255, 0.05);
   z-index: -1;
   transform: scaleY(0);
   transform-origin: top;
@@ -48,7 +48,7 @@ header, footer {
   }
 }
 
-/* Fade-in Effect for Component Mounting */
+/* Fade-in Effect */
 .fade {
   opacity: 0;
   animation: fadeIn 1s forwards;
@@ -65,7 +65,7 @@ header, footer {
   }
 }
 
-/* Transition Classes for React Transition Group (if applicable) */
+/* Transition Classes for Animations */
 .transition-enter {
   opacity: 0;
   transform: translateY(20px);
@@ -133,7 +133,7 @@ header, footer {
   }
 }
 
-/* For Desktops and Larger Devices (min-width: 901px) */
+/* For Desktops (min-width: 901px) */
 @media (min-width: 901px) {
   .main-content {
     padding: 2rem;

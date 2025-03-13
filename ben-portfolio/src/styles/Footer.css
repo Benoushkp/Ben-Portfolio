@@ -1,4 +1,4 @@
-/* Footer.css - Dark Themed Footer Matching Navbar Styles */
+/* Footer.css - Updated for Responsiveness */
 
 .footer-container {
   background: #1a1a1a;
@@ -60,7 +60,7 @@
 
 /* Responsive Adjustments */
 
-/* Phones */
+/* For Phones (max-width: 600px) */
 @media (max-width: 600px) {
   .footer-container {
     padding: 15px 0;
@@ -80,7 +80,7 @@
   }
 }
 
-/* Tablets */
+/* For Tablets (min-width: 601px) and (max-width: 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
   .footer-container {
     padding: 18px 0;

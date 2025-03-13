@@ -1,4 +1,4 @@
-/* Navbar.css - Dark Themed Navbar - Fully Responsive */
+/* Navbar.css - Updated Responsive Navbar Styles */
 
 .navbar {
   background: #1a1a1a;
@@ -37,13 +37,13 @@
   font-size: 1rem;
 }
 
-/* Highlight on hover */
+/* Hover effect for nav items */
 .nav-item:hover {
   color: #ff6ec7;
   transform: scale(1.1);
 }
 
-/* Stay Pink When Active */
+/* Active nav item styling */
 .nav-item.active {
   color: #ff6ec7 !important;
   font-weight: bold;
@@ -78,13 +78,13 @@
   transition: all 0.3s ease;
 }
 
-/* Hover effect for mobile items */
+/* Hover effect for mobile nav items */
 .mobile-nav-item:hover {
   color: #ff6ec7;
   transform: scale(1.1);
 }
 
-/* Active class for mobile */
+/* Active mobile nav item */
 .mobile-nav-item.active {
   color: #ff6ec7 !important;
   font-weight: bold;
@@ -92,7 +92,7 @@
 
 /* Responsive Adjustments */
 
-/* Mobile (max-width: 600px) */
+/* For Mobile (max-width: 600px) */
 @media (max-width: 600px) {
   .navbar-container {
     padding: 10px 15px;
@@ -106,20 +106,20 @@
   .menu-btn {
     display: block;
   }
-  /* Override hover transform on mobile for a subtler effect */
+  /* Subtle hover transform on mobile */
   .nav-item:hover,
   .mobile-nav-item:hover {
     transform: scale(1.05);
   }
 }
 
-/* Tablets (min-width: 601px) and (max-width: 1024px) */
+/* For Tablets (min-width: 601px) and (max-width: 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
   .navbar-container {
     padding: 10px 20px;
   }
   .logo {
-    font-size: 1.4rem; /* Slightly smaller than desktop */
+    font-size: 1.4rem;
   }
   .nav-links {
     gap: 15px;
@@ -127,13 +127,12 @@
   .nav-item {
     font-size: 0.95rem;
   }
-  /* Ensure the mobile menu button stays hidden on tablets */
   .menu-btn {
     display: none;
   }
 }
 
-/* Desktop (min-width: 1025px) - Desktop is correct exactly */
+/* For Desktops (min-width: 1025px) */
 @media (min-width: 1025px) {
   .navbar-container {
     padding: 10px 30px;

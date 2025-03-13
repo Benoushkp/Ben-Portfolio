@@ -1,16 +1,13 @@
-/* Skills page specific styles */
+/* Skills.css - Updated Responsive Skills Page Styles */
 
-/* Container for the Skills page */
 .skills-container {
   padding: 2rem 0;
 }
 
-/* Section styling for each skill category */
 .skills-section {
   margin-bottom: 2rem;
 }
 
-/* Section header styling */
 .skills-section h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -20,9 +17,7 @@
   padding-bottom: 0.5rem;
 }
 
-/* ---------- Carousel Container Styles ---------- */
-
-/* Inner carousel container */
+/* Carousel container */
 .skills-carousel {
   display: flex;
   gap: 1rem;
@@ -31,18 +26,18 @@
   width: 100%;
 }
 
-/* Hide scrollbar for Webkit browsers */
+/* Hide scrollbar for Webkit */
 .skills-carousel::-webkit-scrollbar {
   display: none;
 }
 
-/* Each individual skill item */
+/* Each skill item */
 .skill-item {
   flex: 0 0 auto;
   margin-right: 2rem;
 }
 
-/* ---------- Carousel Controls Styles ---------- */
+/* Carousel controls */
 .carousel-controls {
   display: flex;
   justify-content: center;
@@ -51,7 +46,7 @@
   margin-top: 1rem;
 }
 
-/* ---------- Arrow Button Styles ---------- */
+/* Arrow button styling */
 .skills-arrow {
   background-color: rgba(255, 110, 199, 0.8);
   border: none;
@@ -73,7 +68,7 @@
 
 /* Responsive Adjustments */
 
-/* For phones */
+/* For Phones (max-width: 600px) */
 @media (max-width: 600px) {
   .skills-container {
     padding: 1rem 0;
@@ -104,7 +99,7 @@
   }
 }
 
-/* For tablets */
+/* For Tablets (min-width: 601px) and (max-width: 900px) */
 @media (min-width: 601px) and (max-width: 900px) {
   .skills-container {
     padding: 1.5rem 0;
@@ -134,4 +129,4 @@
   }
 }
 
-/* Desktop (min-width: 901px) - Remains unchanged */
+/* For Desktops (min-width: 901px) - Unchanged */

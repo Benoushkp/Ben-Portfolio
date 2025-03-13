@@ -1,10 +1,11 @@
-import React from 'react';
-import TechnicalSkills from './TechnicalSkills';
-import NonTechnicalSkills from './NonTechnicalSkills';
-import SoftSkills from './SoftSkills';
+import React, { lazy, Suspense } from 'react';
 import SkillsCarousel from './SkillsCarousel';
 import '../styles/main.css';   // Global styles
 import '../styles/Skills.css'; // Skills page specific styles
+
+const TechnicalSkills = lazy(() => import('./TechnicalSkills'));
+const NonTechnicalSkills = lazy(() => import('./NonTechnicalSkills'));
+const SoftSkills = lazy(() => import('./SoftSkills'));
 
 const Skills = () => {
   return (
@@ -14,21 +15,27 @@ const Skills = () => {
       <section className="section fade-in skills-section">
         <h2>Technical Skills</h2>
         <SkillsCarousel>
-          <TechnicalSkills />
+          <Suspense fallback={<div>Loading Technical Skills...</div>}>
+            <TechnicalSkills />
+          </Suspense>
         </SkillsCarousel>
       </section>
 
       <section className="section fade-in skills-section">
         <h2>Non-Technical Skills</h2>
         <SkillsCarousel>
-          <NonTechnicalSkills />
+          <Suspense fallback={<div>Loading Non-Technical Skills...</div>}>
+            <NonTechnicalSkills />
+          </Suspense>
         </SkillsCarousel>
       </section>
 
       <section className="section fade-in skills-section">
         <h2>Soft Skills</h2>
         <SkillsCarousel>
-          <SoftSkills />
+          <Suspense fallback={<div>Loading Soft Skills...</div>}>
+            <SoftSkills />
+          </Suspense>
         </SkillsCarousel>
       </section>
     </div>

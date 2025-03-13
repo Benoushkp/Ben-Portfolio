@@ -1,3 +1,5 @@
+/* ProfileSummary.css - Updated for Responsive Design */
+
 /* Main container using flexbox to align image and text */
 .profile-summary-container {
   display: flex;
@@ -5,14 +7,14 @@
   align-items: stretch; /* Ensures both columns match in height */
   max-width: 1200px;
   margin: 0 auto;
-  background: #121212; /* A dark background for contrast */
-  padding: 10px; /* Further reduced padding */
-  margin-top: -40px; /* Aggressively reducing space above */
+  background: #121212; /* Dark background for contrast */
+  padding: 10px;
+  margin-top: -40px;
 }
 
 /* Image column styling with fixed small size */
 .image-wrapper {
-  flex: 0 0 200px; /* Fixed width for a small image */
+  flex: 0 0 200px; /* Fixed width */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,12 +22,11 @@
 
 .full-image {
   width: 100%;
-  height: auto; /* Maintain the aspect ratio */
+  height: auto;
   object-fit: cover;
   transition: transform 0.5s ease-in-out;
 }
 
-/* Hover effect on the image (optional) */
 .full-image:hover {
   transform: scale(1.02);
 }
@@ -33,7 +34,7 @@
 /* Text column styling */
 .text-wrapper {
   flex: 1;
-  padding: 1rem; /* Reduced padding */
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,11 +44,11 @@
 @media (max-width: 1024px) {
   .profile-summary-container {
     padding: 15px;
-    margin-top: -20px; /* Slightly less aggressive on tablets */
+    margin-top: -20px;
   }
   
   .image-wrapper {
-    flex: 0 0 180px; /* Slightly reduced width */
+    flex: 0 0 180px;
   }
   
   .text-wrapper {
@@ -59,18 +60,18 @@
 @media (max-width: 768px) {
   .profile-summary-container {
     flex-direction: column;
-    margin-top: 0; /* Remove negative margin for mobile */
+    margin-top: 0;
     padding: 10px;
   }
   
   .image-wrapper {
     width: 100%;
-    height: 260px; /* Fixed height for mobile */
+    height: 260px;
     margin-bottom: 10px;
   }
   
   .text-wrapper {
     padding: 0.5rem;
-    text-align: center; /* Center text on mobile */
+    text-align: center;
   }
 }

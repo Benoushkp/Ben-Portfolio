@@ -4,14 +4,14 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Create a motion-enabled Box for the mobile menu
+// Create a motion-enabled Box for animations
 const MotionBox = motion(Box);
 
-// Updated navigation links
+// Navigation links
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Skills', path: '/skills' },
-  { name: 'Education', path: '/higher' }, // Updated to point to Higher.jsx
+  { name: 'Education', path: '/higher' },
   { name: 'Internship Experience', path: '/internship' },
   { name: 'Projects', path: '/projects' },
   { name: 'Interests', path: '/interests' },
@@ -21,7 +21,10 @@ const navLinks = [
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation(); // Get the current route
+  const location = useLocation();
+
+  // Helper function to close the mobile menu
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <AppBar
@@ -90,6 +93,7 @@ const Navbar = () => {
                     color: active ? '#ff6ec7' : '#fff',
                     textDecoration: 'none',
                     fontWeight: 500,
+                    position: 'relative',
                     transition: 'color 0.3s ease, transform 0.3s ease',
                   }}
                   onMouseEnter={(e) => {
@@ -100,6 +104,18 @@ const Navbar = () => {
                   }}
                 >
                   {link.name}
+                  {active && (
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        bottom: -4,
+                        left: 0,
+                        right: 0,
+                        height: 2,
+                        backgroundColor: '#ff6ec7',
+                      }}
+                    />
+                  )}
                 </RouterLink>
               </motion.div>
             );
@@ -122,55 +138,75 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
       <AnimatePresence>
         {menuOpen && (
-          <MotionBox
-            initial={{ y: '-100%', opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: '-100%', opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            sx={{
-              position: 'absolute',
-              top: { xs: '100px', md: '120px' },
-              right: 0,
-              width: '100%',
-              backgroundColor: '#1a1a1a',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              py: 2,
-              zIndex: 100,
-            }}
-          >
-            {navLinks.map((link, index) => {
-              const active = location.pathname === link.path;
-              return (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <RouterLink
-                    to={link.path}
-                    style={{
-                      color: active ? '#ff6ec7' : '#fff',
-                      textDecoration: 'none',
-                      fontSize: '1.2rem',
-                      margin: '10px 0',
-                      transition: 'color 0.3s ease, transform 0.3s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      if (!active) e.currentTarget.style.color = '#ff6ec7';
-                    }}
-                    onMouseLeave={(e) => {
-                      if (!active) e.currentTarget.style.color = '#fff';
-                    }}
-                    onClick={() => setMenuOpen(false)}
+          <>
+            {/* Overlay to close the menu on click */}
+            <MotionBox
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              sx={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                backgroundColor: '#000',
+                zIndex: 150,
+              }}
+              onClick={closeMenu}
+            />
+
+            <MotionBox
+              initial={{ y: '-100%', opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: '-100%', opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              sx={{
+                position: 'absolute',
+                top: { xs: '100px', md: '120px' },
+                right: 0,
+                width: '100%',
+                backgroundColor: '#1a1a1a',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                py: 2,
+                zIndex: 200,
+              }}
+            >
+              {navLinks.map((link, index) => {
+                const active = location.pathname === link.path;
+                return (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    {link.name}
-                  </RouterLink>
-                </motion.div>
-              );
-            })}
-          </MotionBox>
+                    <RouterLink
+                      to={link.path}
+                      style={{
+                        color: active ? '#ff6ec7' : '#fff',
+                        textDecoration: 'none',
+                        fontSize: '1.2rem',
+                        margin: '10px 0',
+                        transition: 'color 0.3s ease, transform 0.3s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        if (!active) e.currentTarget.style.color = '#ff6ec7';
+                      }}
+                      onMouseLeave={(e) => {
+                        if (!active) e.currentTarget.style.color = '#fff';
+                      }}
+                      onClick={closeMenu}
+                    >
+                      {link.name}
+                    </RouterLink>
+                  </motion.div>
+                );
+              })}
+            </MotionBox>
+          </>
         )}
       </AnimatePresence>
     </AppBar>

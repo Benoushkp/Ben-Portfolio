@@ -1,23 +1,23 @@
-import React, { useRef } from 'react';
+import React, { useRef, useCallback } from 'react';
 import { Box, IconButton } from '@mui/material';
 import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import '../styles/Skills.css';
 
-const SkillsCarousel = ({ children }) => {
+const SkillsCarousel = React.memo(({ children }) => {
   const scrollRef = useRef(null);
 
-  const scrollLeft = () => {
+  const scrollLeft = useCallback(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
     }
-  };
+  }, []);
 
-  const scrollRight = () => {
+  const scrollRight = useCallback(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
     }
-  };
+  }, []);
 
   return (
     <Box>
@@ -71,6 +71,6 @@ const SkillsCarousel = ({ children }) => {
       </Box>
     </Box>
   );
-};
+});
 
 export default SkillsCarousel;

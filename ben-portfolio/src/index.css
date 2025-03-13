@@ -1,4 +1,4 @@
-/* index.css - Dark Theme & Advanced Styles */
+/* index.css - Global Styles & Responsive Adjustments */
 
 /* Global Reset */
 * {
@@ -12,8 +12,8 @@
 html, body, #root {
   height: 100%;
   scroll-behavior: smooth;
-  background-color: #121212; /* Dark background */
-  color: #e0e0e0; /* Light gray text */
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 /* Custom Scrollbar */

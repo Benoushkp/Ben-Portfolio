@@ -1,7 +1,7 @@
 // src/pages/Home.jsx
 import React from 'react';
+import { Box } from '@mui/material';
 import { motion } from 'framer-motion';
-import './Home.css'; // Import your new CSS file
 
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -12,11 +12,11 @@ import Contact from '../components/Contact';
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <Box sx={{ background: '#121212', minHeight: '100vh' }}>
       <Navbar />
 
-      {/* MAIN CONTENT SECTIONS */}
-      <div className="home-main-content">
+      {/* Main Content (Hero and ProfileSummary) */}
+      <Box sx={{ padding: { xs: '1rem', sm: '2rem', md: '3rem' } }}>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -32,28 +32,44 @@ const Home = () => {
         >
           <ProfileSummary />
         </motion.div>
+      </Box>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+      {/* Isolated Resume Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            my: { xs: 2, md: 3 },
+          }}
         >
           <Resume />
-        </motion.div>
-      </div>
+        </Box>
+      </motion.div>
 
-      {/* CONTACT SECTION */}
+      {/* Isolated Contact Section */}
       <motion.div
-        className="home-contact-section"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.9 }}
       >
-        <Contact />
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            my: { xs: 2, md: 3 },
+          }}
+        >
+          <Contact />
+        </Box>
       </motion.div>
 
       <Footer />
-    </div>
+    </Box>
   );
 };
 

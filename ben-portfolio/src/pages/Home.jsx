@@ -8,7 +8,8 @@ import Hero from '../components/Hero';
 import ProfileSummary from '../components/ProfileSummary';
 import Footer from '../components/Footer';
 import Resume from '../pages/Resume';
-import Contact from '../pages/Contact';
+// Import the updated Contact component from components (same as your Contact page)
+import Contact from '../components/Contact';
 
 const Home = () => {
   return (

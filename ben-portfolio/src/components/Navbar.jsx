@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, IconButton, Box, Avatar } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -21,6 +21,7 @@ const navLinks = [
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation(); // Get the current route
 
   return (
     <AppBar
@@ -75,27 +76,34 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '25px' }}>
-          {navLinks.map((link, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <RouterLink
-                to={link.path}
-                style={{
-                  color: '#fff',
-                  textDecoration: 'none',
-                  fontWeight: 500,
-                  transition: 'color 0.3s ease, transform 0.3s ease',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#ff6ec7')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#fff')}
+          {navLinks.map((link, index) => {
+            const active = location.pathname === link.path;
+            return (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {link.name}
-              </RouterLink>
-            </motion.div>
-          ))}
+                <RouterLink
+                  to={link.path}
+                  style={{
+                    color: active ? '#ff6ec7' : '#fff',
+                    textDecoration: 'none',
+                    fontWeight: 500,
+                    transition: 'color 0.3s ease, transform 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!active) e.currentTarget.style.color = '#ff6ec7';
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!active) e.currentTarget.style.color = '#fff';
+                  }}
+                >
+                  {link.name}
+                </RouterLink>
+              </motion.div>
+            );
+          })}
         </Box>
 
         {/* Mobile Menu Button */}
@@ -132,29 +140,36 @@ const Navbar = () => {
               zIndex: 100,
             }}
           >
-            {navLinks.map((link, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <RouterLink
-                  to={link.path}
-                  style={{
-                    color: '#fff',
-                    textDecoration: 'none',
-                    fontSize: '1.2rem',
-                    margin: '10px 0',
-                    transition: 'color 0.3s ease, transform 0.3s ease',
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#ff6ec7')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#fff')}
-                  onClick={() => setMenuOpen(false)}
+            {navLinks.map((link, index) => {
+              const active = location.pathname === link.path;
+              return (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  {link.name}
-                </RouterLink>
-              </motion.div>
-            ))}
+                  <RouterLink
+                    to={link.path}
+                    style={{
+                      color: active ? '#ff6ec7' : '#fff',
+                      textDecoration: 'none',
+                      fontSize: '1.2rem',
+                      margin: '10px 0',
+                      transition: 'color 0.3s ease, transform 0.3s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!active) e.currentTarget.style.color = '#ff6ec7';
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!active) e.currentTarget.style.color = '#fff';
+                    }}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {link.name}
+                  </RouterLink>
+                </motion.div>
+              );
+            })}
           </MotionBox>
         )}
       </AnimatePresence>

@@ -1,8 +1,10 @@
+// src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Box } from '@mui/material';
 
 // Import your core components and pages
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
@@ -25,6 +27,7 @@ import Websites from './pages/Websites';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Box
         className="main-content"
@@ -58,8 +61,8 @@ function App() {
           <Route path="/internship" element={<InternshipExperience />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/interests" element={<Interests />} />
-          <Route path="/hobbies" element={<Hobby />}/>
-          <Route path="/contact" element={<Contact />}/>
+          <Route path="/hobbies" element={<Hobby />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/shortfilms" element={<ShortFilms />} />

@@ -22,11 +22,6 @@ const ContactCard = styled(Card)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  // For mobile: reduce width and padding
-  [theme.breakpoints.down('sm')]: {
-    maxWidth: '90%',
-    padding: theme.spacing(2),
-  },
 }));
 
 // Profile Image Inside the Card
@@ -34,14 +29,9 @@ const ProfileImage = styled('img')(({ theme }) => ({
   width: 120,
   height: 120,
   objectFit: 'cover',
-  borderRadius: '12px',
+  borderRadius: '12px', // Slightly rounded edges
   boxShadow: '0 4px 10px rgba(255, 110, 199, 0.5)',
   marginBottom: '16px',
-  [theme.breakpoints.down('sm')]: {
-    width: 80,
-    height: 80,
-    marginBottom: theme.spacing(1),
-  },
 }));
 
 // Social Media Button with Hover Glow Effect
@@ -58,7 +48,10 @@ const SocialButton = styled(IconButton)(({ theme }) => ({
 const Contact = () => {
   return (
     <ContactCard>
+      {/* Profile Image */}
       <ProfileImage src="/assets/contact.jpg" alt="Your Profile" />
+
+      {/* Contact Info */}
       <CardContent>
         <Typography
           variant="h4"
@@ -70,21 +63,23 @@ const Contact = () => {
         <Typography variant="body1" sx={{ color: '#ddd', mb: 3 }}>
           Whether you have ideas, collaborations, or just want to say Hi, I'm happy to connect!
         </Typography>
+
+        {/* Social Media Icons */}
         <Stack direction="row" spacing={3} justifyContent="center">
           <SocialButton component="a" href="https://www.linkedin.com/in/benoush-valentine-f-965a27252" target="_blank">
-            <LinkedInIcon fontSize="large" />
+            <LinkedInIcon sx={{ fontSize: { xs: '1.8rem', md: '2.5rem' } }} />
           </SocialButton>
           <SocialButton component="a" href="https://github.com/Benoushkp" target="_blank">
-            <GitHubIcon fontSize="large" />
+            <GitHubIcon sx={{ fontSize: { xs: '1.8rem', md: '2.5rem' } }} />
           </SocialButton>
           <SocialButton component="a" href="mailto:benoushvalentine@gmail.com">
-            <EmailIcon fontSize="large" />
+            <EmailIcon sx={{ fontSize: { xs: '1.8rem', md: '2.5rem' } }} />
           </SocialButton>
           <SocialButton component="a" href="https://www.instagram.com/benoushvalentine?igsh=MTdpYndzZHd4bGN1eg==" target="_blank">
-            <InstagramIcon fontSize="large" />
+            <InstagramIcon sx={{ fontSize: { xs: '1.8rem', md: '2.5rem' } }} />
           </SocialButton>
           <SocialButton component="a" href="tel:+917200460169">
-            <PhoneIcon fontSize="large" />
+            <PhoneIcon sx={{ fontSize: { xs: '1.8rem', md: '2.5rem' } }} />
           </SocialButton>
         </Stack>
       </CardContent>

@@ -15,7 +15,6 @@ const Home = () => {
     <Box sx={{ background: '#121212', minHeight: '100vh' }}>
       <Navbar />
       <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 } }}>
-        {/* Hero Section */}
         <Box sx={{ mb: { xs: 2, md: 1 } }}>
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -25,8 +24,6 @@ const Home = () => {
             <Hero />
           </motion.div>
         </Box>
-
-        {/* Profile Summary Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -34,8 +31,6 @@ const Home = () => {
         >
           <ProfileSummary />
         </motion.div>
-
-        {/* Resume Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -45,26 +40,14 @@ const Home = () => {
             <Resume />
           </Box>
         </motion.div>
-
-        {/* Contact Section */}
+        {/* Contact Section: Width is 90% on mobile and auto on desktop */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
         >
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              my: { xs: 2, md: 3 },
-              width: '100%',
-            }}
-          >
-            <Box
-              sx={{
-                width: { xs: '90%', md: 'auto' }, // On mobile: 90% width, on desktop: natural size
-              }}
-            >
+          <Box sx={{ display: 'flex', justifyContent: 'center', my: { xs: 2, md: 3 } }}>
+            <Box sx={{ width: { xs: '90%', md: 'auto' } }}>
               <Contact />
             </Box>
           </Box>

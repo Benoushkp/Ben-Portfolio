@@ -54,7 +54,18 @@ function App() {
                   <Hero />
                   <ProfileSummary />
                   <Resume />
-                  {/* Contact component removed from the home page */}
+                  {/* Contact Section */}
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      my: { xs: 2, md: 3 },
+                    }}
+                  >
+                    <Box sx={{ width: { xs: '90%', md: 'auto' } }}>
+                      <Contact />
+                    </Box>
+                  </Box>
                 </Box>
               }
             />

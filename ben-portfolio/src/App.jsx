@@ -6,9 +6,12 @@ import { Box } from '@mui/material';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Contact from './components/Contact';
+import Hero from './components/Hero';
+import ProfileSummary from './components/ProfileSummary';
+import Resume from './pages/Resume';
+import Contact from './pages/Contact';
 
+// Lazy-load page components to improve performance
 const Skills = lazy(() => import('./pages/Skills'));
 const Higher = lazy(() => import('./pages/Higher'));
 const InternshipExperience = lazy(() => import('./pages/InternshipExperience'));
@@ -27,11 +30,34 @@ function App() {
     <Router>
       <ScrollToTop />
       <Navbar />
-      {/* Wrap routed content in a Box that hides horizontal overflow */}
-      <Box sx={{ overflowX: 'hidden' }}>
+      <Box
+        className="main-content"
+        sx={{
+          padding: { xs: '1rem', sm: '2rem', md: '3rem' },
+          width: '100%',
+          overflowX: 'hidden',
+        }}
+      >
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route
+              path="/"
+              element={
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: { xs: '1rem', md: '2rem' },
+                    width: '100%',
+                  }}
+                >
+                  <Hero />
+                  <ProfileSummary />
+                  <Resume />
+                  {/* Contact component removed from the home page */}
+                </Box>
+              }
+            />
             <Route path="/skills" element={<Skills />} />
             <Route path="/higher" element={<Higher />} />
             <Route path="/internship" element={<InternshipExperience />} />

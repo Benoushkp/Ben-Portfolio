@@ -12,18 +12,23 @@ import Footer from '../components/Footer';
 
 const Home = () => {
   return (
-    <Box sx={{ background: '#121212', minHeight: '100vh' }}>
+    <Box sx={{ background: '#121212', minHeight: '100vh', overflowX: 'hidden' }}>
       <Navbar />
-      <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 } }}>
-        <Box sx={{ mb: { xs: 2, md: 1 } }}>
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Hero />
-          </motion.div>
-        </Box>
+      <Container
+        maxWidth="lg"
+        sx={{
+          px: { xs: 1, sm: 2, md: 3 },
+          py: { xs: 2, md: 4 },
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Hero />
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,6 +36,7 @@ const Home = () => {
         >
           <ProfileSummary />
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,7 +46,8 @@ const Home = () => {
             <Resume />
           </Box>
         </motion.div>
-        {/* Contact Section: Width is 90% on mobile and auto on desktop */}
+
+        {/* Contact Section below Resume */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,3 +66,4 @@ const Home = () => {
 };
 
 export default Home;
+
